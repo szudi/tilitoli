@@ -91,11 +91,6 @@ body {
 #tiles.patt1 [id^=tile-]::before {
   display: none;
 }
-#tiles.patt1 ~ #border {
-  border: 1vmin ridge #fff;
-  margin: 0.5vmin;
-  border-radius: 2vmin;
-}
 
 [id^=tile-] {
   display: flex;
@@ -591,19 +586,6 @@ body {
   opacity: 1;
   pointer-events: all;
   touch-action: auto;
-}
-
-#border {
-  display: none;
-  position: fixed;
-  width: 80vmin;
-  height: 80vmin;
-  left: calc(50vw - 40vmin);
-  top: calc(50vh - 40vmin);
-  border: 1vmin ridge #000;
-  border-radius: 2.8vmin;
-  pointer-events: none;
-  touch-action: none;
 }
 
 #open,

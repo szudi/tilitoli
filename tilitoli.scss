@@ -99,7 +99,6 @@ body {
 
     &.patt1 {
 
-        //gap: 0;
         [id^=tile-] {
             border-radius: 3px;
             border: 0;
@@ -110,12 +109,6 @@ body {
                 display: none;
                 //nem kell számozás
             }
-        }
-
-        &~#border {
-            border: 1vmin ridge #fff;
-            margin: .5vmin;
-            border-radius: 2vmin;
         }
     }
 }
@@ -270,19 +263,6 @@ body {
         pointer-events: all;
         touch-action: auto;
     }
-}
-
-#border {
-    display: none;
-    position: fixed;
-    width: 80vmin;
-    height: 80vmin;
-    left: calc(50vw - 40vmin);
-    top: calc(50vh - 40vmin);
-    border: 1vmin ridge #000;
-    border-radius: 2.8vmin;
-    pointer-events: none;
-    touch-action: none;
 }
 
 //controls:
