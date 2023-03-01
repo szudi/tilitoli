@@ -140,3 +140,6 @@ diffs.forEach((e) => {
         tile_board.className = e.target.id;
     }
 });
+//init controls
+animdur = anim.checked ? 300 : 0;
+tile_board.className = document.querySelector('[name=diff]:checked').id;
