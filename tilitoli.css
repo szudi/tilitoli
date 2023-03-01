@@ -64,11 +64,20 @@
 }
 
 body {
-  background: #223;
+  margin: 0;
+  background: #000;
   color: #fff;
   font-family: Helvetica, Arial, sans-serif;
   overflow: hidden;
   cursor: crosshair;
+}
+
+#flekk {
+  position: fixed;
+  width: 100vmin;
+  height: 100vmin;
+  margin: calc(50vh - 50vmin) 0 0 calc(50vw - 50vmin);
+  background-color: #223;
 }
 
 #tiles {
@@ -659,7 +668,8 @@ body {
   border: 1px solid #ccc;
   padding: 0.5rem;
   margin: 1rem 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 10rem;
 }
 #controls input[type=checkbox] + label {
