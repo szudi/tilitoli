@@ -1,0 +1,35 @@
+html(lang="en")
+    head
+        title TiliToli by János Szüdi
+        meta(name="description" content="A small visual puzzle game")
+
+        include _metas.pug
+        link(rel="stylesheet" href="css/tilitoli.min.css")
+
+    body
+        #tiles.patt1
+            each _, i in Array(7*7)
+                .tile
+            #border
+            #hud
+            #steps steps: #[span]
+            #time time: #[span]
+            button#shuffle Let's start!
+            #goodjob
+            |Good Job!
+
+            form#controls
+            a#close(href="#") × 
+            fieldset#diff
+                legend Appereance:  
+                input#numonly(type="radio" name="diff")
+                label(for="numonly") Nubered blocks
+                input#patt1(type="radio" name="diff" checked)
+                label(for="patt1") Colorful squares
+
+            input#anim(type="checkbox" checked)
+            label(for="anim") Animation
+
+
+            a#open(href="#controls")
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M39 26v-2-2l4-3v-2l-4-6-1-1-5 2-3-2-1-5-1-1h-8l-1 1-1 5-3 2-5-2-1 1-4 6v2l4 3v4l-4 3v2l4 6 1 1 5-2 3 2 1 5 1 1h8l1-1 1-5 3-2 5 2 1-1 4-6v-2l-4-3zm-15 5a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>
