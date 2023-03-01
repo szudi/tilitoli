@@ -1,4 +1,5 @@
-const res = 5; //square --> Kell-e? 
+const root = document.documentElement;
+//const res = 5; //square --> Kell-e? 
 const tiles = document.querySelectorAll('.tile');
 const tile_board = document.querySelector('#tiles');
 const hud = document.querySelector('#hud');
@@ -7,25 +8,26 @@ const hud_time = document.querySelector('#time span');
 const goodjob = document.querySelector('#goodjob');
 const anim = document.querySelector('#anim');
 const diffs = document.querySelectorAll('#diff input');
-let map = Array(res * res).fill().map((n, i) => n = i);
+let map = Array(25).fill().map((n, i) => n = i);
 const check = [...map];
 let drag, game = false;
 let col, row, dir, xorigin, yorigin, steps, time;
 let animdur = 300;
+let rotatedeg = 0;
 
 function drawtiles() {
     let c = 0;
-    for (let y = 1; y < res + 1; y++) {
-        for (let x = 1; x < res + 1; x++) {
+    for (let y = 1; y < 6; y++) {
+        for (let x = 1; x < 6; x++) {
             //közepe:
-            tiles[x + (y * (res + 2))].setAttribute('id', 'tile-' + map[c]);
+            tiles[x + (y * 7)].setAttribute('id', 'tile-' + map[c]);
             c++;
         }
         //overflow:
-        tiles[y].setAttribute('id', 'tile-' + map[(y - 1) + (res * 4)]);
-        tiles[y + ((res + 1) * (res + 2))].setAttribute('id', 'tile-' + map[y - 1]);
-        tiles[y * (res + 2)].setAttribute('id', 'tile-' + map[(y * res) - 1]);
-        tiles[y * (res + 2) + (res + 1)].setAttribute('id', 'tile-' + map[(y - 1) * res]);
+        tiles[y].setAttribute('id', 'tile-' + map[(y - 1) + 20]);
+        tiles[y + 42].setAttribute('id', 'tile-' + map[y - 1]);
+        tiles[y * 7].setAttribute('id', 'tile-' + map[(y * 5) - 1]);
+        tiles[y * 7 + 6].setAttribute('id', 'tile-' + map[(y - 1) * 5]);
     }
 
     //drawhud:
@@ -143,3 +145,12 @@ diffs.forEach((e) => {
 //init controls
 animdur = anim.checked ? 300 : 0;
 tile_board.className = document.querySelector('[name=diff]:checked').id;
+
+//root --rotate-deg animate
+function inc_rotatedeg() {
+    root.style.setProperty('--rotate-deg', rotatedeg + "deg");
+    rotatedeg ++;
+    rotatedeg = rotatedeg>360 ? 1 : rotatedeg;
+    setTimeout(() => {requestAnimationFrame(inc_rotatedeg);}, 20);
+}
+requestAnimationFrame(inc_rotatedeg);
