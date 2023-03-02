@@ -201,7 +201,7 @@ body {
         content: '';
         border: .7vmin solid #0000;
         border-radius: inherit;
-        mix-blend-mode: screen;
+        mix-blend-mode: color-dodge;
         filter: blur(1px) contrast(2);
     }
 
