@@ -90,21 +90,22 @@ body {
     overflow: hidden;
     cursor: crosshair;
 }
-#flekk {
-    position: fixed;
+%centersquare {
     width: 100vmin;
     height: 100vmin;
     margin: calc(50vh - 50vmin) 0 0 calc(50vw - 50vmin);
+}
+#flekk {
+    @extend %centersquare;
+    position: fixed;
     background-color: #223;
 }
 #tiles {
+    @extend %centersquare;
     position: relative;
     display: grid;
     grid-template: repeat(7, 1fr) / repeat(7, 1fr);
     gap: 1px;
-    width: 100vmin;
-    height: 100vmin;
-    margin: calc(50vh - 50vmin) 0 0 calc(50vw - 50vmin);
     transform: translateY(2%);
     clip-path: polygon(14.28% 14.28%, 85.71% 14.28%, 85.71% 85.71%, 14.28% 85.71%);
 
@@ -184,7 +185,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 5%;
-    font-size: 3vmin;
+    font-size: max(3vmin,18px);
+    white-space: nowrap;
     padding: 1vmin 6vmin;
     font-weight: 900;
     border-radius: 6vmin;
@@ -341,14 +343,14 @@ body {
 
 #controls {
     position: fixed;
-    width: 12.5rem;
+    width: min(16rem,99vw);
     top: 0;
     bottom: 0;
     overflow-y: auto;
     background: #000a;
     color: #fff;
     padding: 64px .5rem;
-    left: -12.5rem;
+    left: max(-16rem,-99vw);
     opacity: 0;
     transition: .666s;
     cursor: default;
@@ -384,7 +386,6 @@ body {
         margin: 1rem 0;
         display: flex;
         flex-direction: column;
-        width: 10rem;
     }
 
     input[type=checkbox] {
@@ -393,7 +394,6 @@ body {
             padding: .5rem;
             margin-top: .5rem;
             display: block;
-            width: 10rem;
             border-radius: 12px;
 
             &::after {
