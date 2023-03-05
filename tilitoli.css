@@ -85,6 +85,7 @@ body {
   width: 100vmin;
   height: 100vmin;
   margin: calc(50vh - 50vmin) 0 0 calc(50vw - 50vmin);
+  overflow: hidden;
 }
 
 #flekk {
@@ -101,7 +102,7 @@ body {
   -webkit-clip-path: polygon(14.28% 14.28%, 85.71% 14.28%, 85.71% 85.71%, 14.28% 85.71%);
           clip-path: polygon(14.28% 14.28%, 85.71% 14.28%, 85.71% 85.71%, 14.28% 85.71%);
 }
-@media (max-aspect-ratio: 0.7) {
+@media (max-aspect-ratio: 0.8) {
   #tiles {
     transform: scale(1.3);
   }
