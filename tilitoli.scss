@@ -429,3 +429,30 @@ body {
     }
 
 }
+
+#logo {
+    position: fixed;
+    width: 100vmin;
+    height: 100vmin;
+    pointer-events: none;
+    
+
+    @media (min-aspect-ratio: .9) {
+        z-index: -1;
+        top: 0;
+        fill: #223;
+        transform: rotate(-90deg);
+    }
+
+    @media (max-aspect-ratio: .9) {
+        bottom: 0;
+        display: grid;
+        align-items: end;
+    }
+
+    svg {
+        @media (min-aspect-ratio: 1.5) {
+            margin-top: 72px;
+        }
+    }
+}

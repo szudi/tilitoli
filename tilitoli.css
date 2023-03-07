@@ -730,4 +730,31 @@ body {
 #controls input[type=radio]:checked + label {
   opacity: 1;
   font-weight: bold;
+}
+
+#logo {
+  position: fixed;
+  width: 100vmin;
+  height: 100vmin;
+  pointer-events: none;
+}
+@media (min-aspect-ratio: 0.9) {
+  #logo {
+    z-index: -1;
+    top: 0;
+    fill: #223;
+    transform: rotate(-90deg);
+  }
+}
+@media (max-aspect-ratio: 0.9) {
+  #logo {
+    bottom: 0;
+    display: grid;
+    align-items: end;
+  }
+}
+@media (min-aspect-ratio: 1.5) {
+  #logo svg {
+    margin-top: 72px;
+  }
 }/*# sourceMappingURL=tilitoli.css.map */
