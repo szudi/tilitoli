@@ -757,4 +757,29 @@ body {
   #logo svg {
     margin-top: 72px;
   }
+}
+
+#szudi {
+  position: fixed;
+  right: 1rem;
+  transition: 0.5s;
+}
+@media (min-aspect-ratio: 1) {
+  #szudi {
+    bottom: 1rem;
+    fill: #223;
+    width: 3rem;
+    height: 6rem;
+  }
+}
+@media (max-aspect-ratio: 1) {
+  #szudi {
+    top: 1rem;
+    fill: #445;
+    width: 2rem;
+    height: 4rem;
+  }
+}
+#szudi:hover, #szudi:focus-visible {
+  fill: #fff;
 }/*# sourceMappingURL=tilitoli.css.map */

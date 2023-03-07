@@ -456,3 +456,27 @@ body {
         }
     }
 }
+
+#szudi {
+    position: fixed;
+    right: 1rem;
+    transition: .5s;
+
+    @media (min-aspect-ratio: 1) {
+        bottom: 1rem;
+        fill: #223;
+        width: 3rem;
+        height: 6rem;
+    }
+
+    @media (max-aspect-ratio: 1) {
+        top: 1rem;
+        fill: #445;
+        width: 2rem;
+        height: 4rem;
+    }
+
+    &:hover, &:focus-visible {
+        fill: #fff;
+    }
+}
