@@ -102,11 +102,6 @@ body {
   -webkit-clip-path: polygon(14.28% 14.28%, 85.71% 14.28%, 85.71% 85.71%, 14.28% 85.71%);
           clip-path: polygon(14.28% 14.28%, 85.71% 14.28%, 85.71% 85.71%, 14.28% 85.71%);
 }
-@media (max-aspect-ratio: 0.8) {
-  #tiles {
-    transform: scale(1.3);
-  }
-}
 #tiles.patt1 [id^=tile-] {
   border-radius: 3px;
   border: 0;
